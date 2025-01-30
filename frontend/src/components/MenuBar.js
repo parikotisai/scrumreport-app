@@ -178,9 +178,9 @@ const MenuBar = () => {
       <Link to="/add-task">Add Task</Link>
 
       {/* ✅ Only Interns can request a role change */}
-      {role === 'intern' && (
-        <Link to="/request-role">Request Role Change</Link>
-      )}
+      {/* {role === 'intern' && ( */}
+        {/* <Link to="/request-role">Request Role Change</Link> */}
+      {/* )} */}
 
       {/* ✅ CEO/Manager can see "View Interns" */}
       {(role === 'manager' || role === 'CEO') && (
@@ -208,16 +208,16 @@ const MenuBar = () => {
       )}
 
       {/* ✅ CEO/Manager can approve role requests */}
-      {role === 'manager' || role === 'CEO' ? (
-        <Link to="/role-approvals">Role Approval</Link>
-      ) : null}
+      {/* {role === 'manager' || role === 'CEO' ? ( */}
+        {/* <Link to="/role-approvals">Role Approval</Link> */}
+      {/* ) : null} */}
 
       {/* ✅ Admin/CEO can see all role requests */}
-      {role === "admin" || role === "CEO" ? (
-        <Link to="/role-requests" className="nav-link">
-          Role Requests
-        </Link>
-      ) : null}
+      {/* {role === "admin" || role === "CEO" ? ( */}
+        {/* <Link to="/role-requests" className="nav-link"> */}
+          {/* Role Requests */}
+        {/* </Link> */}
+      {/* ) : null} */}
 
       <button onClick={handleLogout} className="logout-button">Logout</button>
     </nav>

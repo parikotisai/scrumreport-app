@@ -80,18 +80,106 @@
 // module.exports = User;
 
 
+// const db = require('../config/db.config');
+// const Joi = require('joi');
+
+// const User = {
+//   /** ✅ Create a new user with default role as 'intern' */
+//   create: async (user) => {
+//     const query = 'INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)';
+//     return db.execute(query, [
+//       user.username,
+//       user.password,
+//       user.email,
+//       user.role || 'intern' // Default role to 'intern' if not provided
+//     ]);
+//   },
+
+//   /** ✅ Find user by username */
+//   findByUsername: async (username) => {
+//     const query = 'SELECT * FROM users WHERE username = ?';
+//     const [rows] = await db.execute(query, [username]);
+//     return rows.length ? rows[0] : null;
+//   },
+
+//   /** ✅ Find user by ID */
+//   findById: async (id) => {
+//     const query = 'SELECT * FROM users WHERE id = ?';
+//     const [rows] = await db.execute(query, [id]);
+//     return rows.length ? rows[0] : null;
+//   },
+
+//   /** ✅ Find user by email */
+//   findByEmail: async (email) => {
+//     const query = 'SELECT * FROM users WHERE email = ?';
+//     const [rows] = await db.execute(query, [email]);
+//     return rows.length ? rows[0] : null;
+//   },
+
+//   /** ✅ Get all users by a specific role */
+//   findAllByRole: async (role) => {
+//     const query = 'SELECT * FROM users WHERE role = ?';
+//     const [rows] = await db.execute(query, [role]);
+//     return rows;
+//   },
+
+//   /** ✅ NEW: Check if an email exists in the allowed_admins table */
+//   isAllowedAdmin: async (email) => {
+//     const query = 'SELECT * FROM allowed_admins WHERE email = ?';
+//     const [rows] = await db.execute(query, [email]);
+//     return rows.length > 0; // Returns true if email exists in allowed_admins table
+//   },
+
+//   /** ✅ Validate User Data */
+//   validate: (user) => {
+//     const schema = Joi.object({
+//       username: Joi.string().min(3).required(),
+//       email: Joi.string().email().required(),
+//       password: Joi.string().min(6).required(),
+//       role: Joi.string().valid('intern', 'manager', 'CEO').default('intern') // Default role
+//     });
+//     return schema.validate(user);
+//   }
+// };
+
+// module.exports = User;
+
+
+
+
 const db = require('../config/db.config');
 const Joi = require('joi');
 
 const User = {
-  /** ✅ Create a new user with default role as 'intern' */
+  /** ✅ Check if an email exists in the allowed_managers table */
+  isAllowedManager: async (email) => {
+    const query = 'SELECT * FROM allowed_managers WHERE email = ?';
+    const [rows] = await db.execute(query, [email]);
+    return rows.length > 0; // Returns true if email exists in allowed_managers table
+  },
+
+  /** ✅ Create user and assign role based on predefined lists */
   create: async (user) => {
+    let assignedRole = 'intern'; // Default role
+
+    // Check if the user is an admin
+    const isAdmin = await User.isAllowedAdmin(user.email);
+    if (isAdmin) {
+      assignedRole = 'admin';
+    } else {
+      // Check if the user is a predefined manager
+      const isManager = await User.isAllowedManager(user.email);
+      if (isManager) {
+        assignedRole = 'manager';
+      }
+    }
+
     const query = 'INSERT INTO users (username, password, email, role) VALUES (?, ?, ?, ?)';
     return db.execute(query, [
       user.username,
       user.password,
       user.email,
-      user.role || 'intern' // Default role to 'intern' if not provided
+      assignedRole // Automatically assign role based on email
     ]);
   },
 
@@ -136,7 +224,7 @@ const User = {
       username: Joi.string().min(3).required(),
       email: Joi.string().email().required(),
       password: Joi.string().min(6).required(),
-      role: Joi.string().valid('intern', 'manager', 'CEO').default('intern') // Default role
+      role: Joi.string().valid('intern', 'manager', 'CEO', 'admin').default('intern') // Default role
     });
     return schema.validate(user);
   }

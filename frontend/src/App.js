@@ -111,8 +111,8 @@ import InternList from './components/InternList';
 import StandupForm from './components/StandupForm'; 
 import StandupSummary from './components/StandupSummary'; 
 import TeamIssues from './components/TeamIssues'; // Import TeamIssues
-import RoleApproval from './components/RoleApproval';
-import RoleRequests from './components/RoleRequests';
+// import RoleApproval from './components/RoleApproval';
+// import RoleRequests from './components/RoleRequests';
 import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
@@ -165,9 +165,9 @@ const App = () => {
 <Route path="/team-issues" element={<ProtectedRoute><TeamIssues /></ProtectedRoute>} /> {/* New Route */}
 
 {/* Inside Routes */}
-<Route path="/role-approvals" element={<RoleApproval />} />
-<Route path="/role-requests" element={<RoleRequests />} />
-<Route path="/request-role" element={<RoleRequests />} /> {/* ✅ Fix */}
+{/* <Route path="/role-approvals" element={<RoleApproval />} /> */}
+{/* <Route path="/role-requests" element={<RoleRequests />} /> */}
+{/* <Route path="/request-role" element={<RoleRequests />} /> ✅ Fix */}
 
 
             <Route
