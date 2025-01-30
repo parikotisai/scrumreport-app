@@ -1,0 +1,707 @@
+/* ================= LOGO STYLES ================= */
+.header-container {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #000000, #333333); /* Dark gradient header */
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Align logo to the left */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1; /* Allows the menu bar to take the rest of the space */
+}
+
+/* Logo Image */
+.logo {
+  width: 150px; /* Adjust size */
+  height: auto;
+  max-width: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.menu-bar {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-bar a {
+  color: rgb(233, 174, 36);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-bar a:hover {
+  color: #f4b400; /* Gold color hover */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    width: 120px; /* Smaller logo on mobile */
+  }
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  /* background-color: #f4f4f4; */
+  background: linear-gradient(to right, #000000, #2c2c2c); /* Dark gradient matching logo */
+  margin: 0;
+  padding: 0;
+  color: #ffffff; /* Change text color to white for better contrast */
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+  background: #1e1e1e; /* Dark Grey background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+form {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  color: #030301; /* Light gold color to match theme */
+
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white; /* Ensures contrast with dark background */
+  color: black; /* Ensures text is readable */
+
+}
+
+button {
+  background-color: #FFD700; /* Gold color for consistency */
+  color: black; /* Black text for better contrast */
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #e6a000;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Role */
+
+.role-approval-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #292929;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.role-approval-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.role-approval-table th, .role-approval-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #444;
+  color: white;
+}
+
+.role-approval-table th {
+  background-color: gold;
+  color: black;
+}
+
+.approve-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.reject-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.role-request-button {
+  background-color: #ffcc00; /* Gold color */
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.role-request-button:hover {
+  background-color: #e6b800;
+}
+
+/* General Container Styling */
+.task-list-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #292929; /* Slightly lighter grey */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffd700; /* Lighter gold */
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+/* Filter Dropdown Styling */
+.filter-container {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#status-filter {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Task List and Task Item Styling */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: #3a3a3a; /* Darker Card Background */
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+
+.task-item:hover {
+  box-shadow: 0px 4px 8px rgba(255, 204, 0, 0.3);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-header strong {
+  font-size: 1.2em;
+  color: #e8cb0a;
+}
+
+/* Task Status Styling */
+.task-status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  color: #ffffff;
+}
+
+.task-status.TODO {
+  background-color: #f4b400; /* Gold */
+  color: black;
+
+}
+
+.task-status.in-progress {
+  background-color: #2196f3;
+}
+
+.task-status.completed {
+  background-color: #4caf50;
+}
+
+.task-description {
+  color: #666;
+  margin-top: 10px;
+  font-size: 0.95em;
+}
+
+/* Issues Section Styling Managers/ceo can see */
+.issues-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.issues-section h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: gold;
+}
+
+.issue-item {
+  background-color: #333;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.issue-item strong {
+  font-size: 1.2em;
+  color: #ffcc00;
+}
+
+.issue-item p {
+  color: #ccc;
+}
+
+.issue-item img {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.issues-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.issues-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: gold;
+}
+
+.issues-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.issue-item {
+  background-color: #333;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.issue-item strong {
+  font-size: 1.2em;
+  color: #ffcc00;
+}
+
+.issue-item p {
+  color: #ccc;
+}
+
+.issue-item img {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* Team Reported Issues Table */
+.issues-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #222; /* Dark background for table */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Header */
+.issues-table thead {
+  background-color: #eba80c; /* Bright blue header */
+  color: rgb(6, 6, 6);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Header Cells */
+.issues-table thead th {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #444;
+}
+
+/* Table Body Rows */
+.issues-table tbody tr {
+  background-color: #333;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Alternate row colors */
+.issues-table tbody tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+/* Row Hover Effect */
+.issues-table tbody tr:hover {
+  background-color: #444;
+}
+
+/* Table Data Cells */
+.issues-table td {
+  padding: 10px;
+  border: 1px solid #444;
+  color: #f4f4f4;
+}
+
+/* Center Align Screenshot Column */
+.issues-table td.screenshot-column {
+  text-align: center;
+}
+
+/* Screenshot Display */
+.issues-table .screenshot-img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Screenshot Hover Effect */
+.issues-table .screenshot-img:hover {
+  transform: scale(1.5);
+}
+
+/* Reported By Column */
+.issues-table .reported-by {
+  font-weight: bold;
+  color: #ffd700; /* Gold color */
+}
+
+/* No Screenshot Message */
+.no-screenshot {
+  font-style: italic;
+  color: #aaa;
+}
+
+/* Date Styling */
+.issues-table .date-reported {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+
+/* Task Actions Buttons */
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.edit-button,
+.delete-button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: #ffffff;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+}
+
+/* Add Task Button Styling */
+.add-task-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #eab909;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-task-button:hover {
+  background-color: #9f7105;
+}
+
+   /* Global Container Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Standup Form Styles */
+.standup-form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.standup-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.standup-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.standup-form-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.standup-form-container textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.standup-form-container button {
+  padding: 12px;
+  background-color: #e4b60d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.standup-form-container button:hover {
+  background-color: gray;
+}
+
+/* Standup Summary Styles */
+.standup-summary-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.standup-summary-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.standup-summary-container .date-input {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.standup-summary-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.standup-summary-container li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.standup-summary-container li p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.standup-summary-container li hr {
+  margin: 10px 0;
+}
+
+.standup-summary-container strong {
+  color: #333;
+}
+
+/* Error Message Styles */
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Button Styles */
+.submit-button {
+  padding: 12px;
+  background-color: #ebac0e;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #FFD700;
+}
+
+.back-button {
+  padding: 10px 15px;
+  background-color: #ebb914;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.back-button:hover {
+  background-color: #eece16;
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.submit-button, .cancel-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button {
+  background-color: #e3ca08;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #a58d05;
+}
+
+.cancel-button {
+  background-color: #d7ae0b;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #e1ae06;
+}
+
+/* ================== NAVIGATION MENU ================== */
+.nav-link {
+  color: #ffd700; /* Lighter gold */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #ffffff; /* White on hover */
+}
+
+/* ================== LOGOUT BUTTON ================== */
+.logout-button {
+  background-color: #ffd700; /* Lighter gold */
+  color: black !important; /* Black text */
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #ffcc00; /* Slightly lighter gold on hover */
+}
+
